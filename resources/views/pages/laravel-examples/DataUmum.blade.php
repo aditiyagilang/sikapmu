@@ -8,7 +8,6 @@
         <div class="container-fluid py-4">
             <div class="row">
                 <div class="col-12">
-
                     <div class="me-3 my-3 text-start">
                         <a class="btn bg-0057FF mb-0"  data-bs-toggle="modal" data-bs-target="#add" href="javascript:;" style="background-color: #0057FF;">
                             <i class="text-sm text-white" >Tambah Data</i>

@@ -1,42 +1,34 @@
 <x-layout bodyClass="">
-
+    <x-navbars.navs.navland signin='login' signup='register'></x-navbars.navs.navland>
     <div>
         <div class="container position-sticky z-index-sticky top-0">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Navbar -->
-                    <x-navbars.navs.guest signin='login' signup='register'></x-navbars.navs.guest>
-                    <!-- End Navbar -->
-                </div>
-            </div>
+
         </div>
-        <main class="main-content  mt-0">
+        <main class="main-content mt-0">
             <section>
                 <div class="page-header min-vh-100">
                     <div class="container">
+                        <h1 class="text-start mx-3" style="color: rgb(0, 0, 0); font-size: 18px;">Daftar SiPanda</h1>
                         <div class="row">
-                            <div
-                                class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
-                                <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center"
-                                    style="background-image: url('../assets/img/illustrations/illustration-signup.jpg'); background-size: cover;">
-                                </div>
-                            </div>
-                            <div
-                                class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
+                            <div class="col-12 col-md-6 col-lg-4">
                                 <div class="card card-plain">
-                                    <div class="card-header">
-                                        <h4 class="font-weight-bolder">Sign Up</h4>
-                                        <p class="mb-0">Enter your name, email and password to register</p>
-                                    </div>
                                     <div class="card-body">
                                         <form method="POST" action="{{ route('register') }}">
                                             @csrf
                                             <div class="input-group input-group-outline mt-3">
-                                                <label class="form-label">Name</label>
-                                                <input type="text" class="form-control" name="name"
-                                                    value="{{ old('name') }}">
+                                                <label class="form-label">Username</label>
+                                                <input type="text" class="form-control" name="username"
+                                                    value="{{ old('username') }}">
                                             </div>
-                                            @error('name')
+                                            @error('username')
+                                            <p class='text-danger inputerror'>{{ $message }} </p>
+                                            @enderror
+                                            <div class="input-group input-group-outline mt-3">
+                                                <label class="form-label">Nama</label>
+                                                <input type="text" class="form-control" name="nama"
+                                                    value="{{ old('nama') }}">
+                                            </div>
+                                            @error('nama')
                                             <p class='text-danger inputerror'>{{ $message }} </p>
                                             @enderror
                                             <div class="input-group input-group-outline mt-3">
@@ -54,28 +46,53 @@
                                             @error('password')
                                             <p class='text-danger inputerror'>{{ $message }} </p>
                                             @enderror
-                                            <div class="form-check form-check-info text-start ps-0 mt-3">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" checked>
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                    I agree the <a href="javascript:;"
-                                                        class="text-dark font-weight-bolder">Terms and Conditions</a>
-                                                </label>
+                                            <div class="input-group input-group-outline mt-3">
+                                                <label class="form-label">Konfirmasi Password</label>
+                                                <input type="password" class="form-control" name="kpassword">
                                             </div>
+                                            @error('kpassword')
+                                            <p class='text-danger inputerror'>{{ $message }} </p>
+                                            @enderror
+                                            <div class="input-group input-group-outline mt-3">
+                                                <label class="form-label">No Hp</label>
+                                                <input type="text" class="form-control" name="kontak"
+                                                    value="{{ old('kontak') }}">
+                                            </div>
+                                            @error('kontak')
+                                            <p class='text-danger inputerror'>{{ $message }} </p>
+                                            @enderror
+                                            <div class="input-group input-group-outline mb-3 mt-3">
+                                                <label class="form-label">Jenis</label>
+                                                <select class="form-select" name="role" required>
+                                                    <option value="">Pilih jenis...</option>
+                                                    <option value="Pemuda Pelopor">Pemuda Pelopor</option>
+                                                    <option value="Wirausaha Muda">Wirausaha Muda</option>
+                                                    <option value="OKP">OKP</option>
+                                                    <option value="Admin">Admin</option>
+                                                </select>
+                                            </div>
+
+
+                                            @error('kontak')
+                                            <p class='text-danger inputerror'>{{ $message }} </p>
+                                            @enderror
                                             <div class="text-center">
                                                 <button type="submit"
-                                                    class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Sign
-                                                    Up</button>
+                                                    class="btn btn-lg btn-lg w-100 mt-4 mb-0" style="background-color: #0057FF;"><i class="text-sm text-white" >Sign Up</i>
+                                                    </button>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="close"
+                                                    class="btn btn-lg bg- btn-lg w-100 mt-4 mb-0" style="background-color: #000000;"><i class="text-sm text-white" >Kembali Ke Login</i></button>
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                                        <p class="mb-2 text-sm mx-auto">
-                                            Already have an account?
-                                            <a href="{{ route('login') }}"
-                                                class="text-primary text-gradient font-weight-bold">Sign in</a>
-                                        </p>
-                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="col-4 d-lg-flex d-none my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-end flex-column">
+                                <div class="position-relative   border-radius-lg d-flex flex-column justify-content-center">
+                                    <img src="{{ asset('assets/img/bg_in.png') }}" alt="profile-img" class="text-center" />
                                 </div>
                             </div>
                         </div>
@@ -89,7 +106,7 @@
     <script src="{{ asset('assets') }}/js/jquery.min.js"></script>
     <script>
         $(function() {
-    
+
         var text_val = $(".input-group input").val();
         if (text_val === "") {
           $(".input-group").removeClass('is-filled');

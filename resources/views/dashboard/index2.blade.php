@@ -1,5 +1,5 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage='dashboard'></x-navbars.sidebar>
+    <x-navbars.sidebar2 activePage='dashboard2'></x-navbars.sidebar2>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
         <x-navbars.navs.auth titlePage="Dashboard"></x-navbars.navs.auth>

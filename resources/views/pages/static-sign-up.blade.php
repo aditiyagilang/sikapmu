@@ -42,6 +42,14 @@
                                                 <label class="form-label">Password</label>
                                                 <input type="password" class="form-control" name="password" required>
                                             </div>
+                                            <div class="input-group input-group-outline mb-3">
+                                                <label class="form-label">Konfirmasi Password</label>
+                                                <input type="password" class="form-control" name="kpassword" required>
+                                            </div>
+                                            <div class="input-group input-group-outline mb-3">
+                                                <label class="form-label">No Hp</label>
+                                                <input type="text" class="form-control" name="nohp" required>
+                                            </div>
                                             <div class="form-check form-check-info text-start ps-0">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="flexCheckDefault" checked>
